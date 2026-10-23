@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as below."
+title: "Why We Need Hybrid Metaheuristics: code and data"
+authors:
+  - family-names: Alobaedy
+    given-names: Mustafa Muwafak
+    orcid: "https://orcid.org/0000-0002-6562-2922"
+license: MIT
+repository-code: "https://github.com/mustafaalobaedy/Why-We-Need-Hybrid-Metaheuristics"
+date-released: 2026-10-24
