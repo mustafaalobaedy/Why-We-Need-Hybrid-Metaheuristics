@@ -1,0 +1,6 @@
+Third-party material (not covered by the license above):
+* 03_Code/src/cec17/cec17_test_fast_pow.cpp and 03_Code/src/cec17/input_data/:
+  official CEC 2017 benchmark code and data (N. H. Awad, M. Z. Ali, P. N. Suganthan,
+  J. J. Liang, B. Y. Qu; fast-pow variant by V. Stanovov), redistributed unchanged from
+  https://github.com/P-N-Suganthan/CEC2017-BoundContrained
+* 04_Data/tsplib/: TSPLIB instances (G. Reinelt, ORSA Journal on Computing 3(4), 1991).

@@ -42,7 +42,7 @@ The experiments are resumable: tasks already present in the output CSV are skipp
 * TSPLIB: G. Reinelt (1991).
 
 ## License
-MIT (see `LICENSE`); third-party benchmark code and data remain under their original terms.
+MIT (see `LICENSE`); third-party benchmark code and data remain under their original terms (see `NOTICE`).
 
 ## Author
 Mustafa Muwafak Alobaedy
