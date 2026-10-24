@@ -1,5 +1,7 @@
 # Why We Need Hybrid Metaheuristics
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23617134.svg)](https://doi.org/10.5281/zenodo.23617134)
+
 Code and data for the study **"Why We Need Hybrid Metaheuristics: An Empirical Analysis of When Hybridization Pays Off"** (manuscript under review).
 
 The study measures the effect of hybridization itself: nine hybrid metaheuristics, covering the four classes of Talbi's taxonomy, are compared with **their own parent algorithms** under identical budgets on the CEC 2017 benchmark suite (D = 10, 30, 50; 51 runs), the effect of the budget split between the components is examined at D = 10 and 30, and the analysis is repeated on a traveling salesman case study (TSPLIB).
@@ -49,7 +51,7 @@ The experiments are resumable: tasks already present in the output CSV are skipp
 * TSPLIB: G. Reinelt (1991).
 
 ## Citation
-The archived release of this repository has a DOI on Zenodo; the citation metadata are given in `CITATION.cff` and `.zenodo.json`.
+The releases of this repository are archived on Zenodo. Version v1.0.0, which produced the results reported in the paper, has the DOI [10.5281/zenodo.23617180](https://doi.org/10.5281/zenodo.23617180); the DOI [10.5281/zenodo.23617134](https://doi.org/10.5281/zenodo.23617134) in the badge above always resolves to the latest version. The citation metadata are given in `CITATION.cff` and `.zenodo.json`.
 
 ## License
 MIT (see `LICENSE`); third-party benchmark code and data remain under their original terms (see `NOTICE`).
