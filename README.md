@@ -2,7 +2,7 @@
 
 Code and data for the study **"Why We Need Hybrid Metaheuristics: An Empirical Analysis of When Hybridization Pays Off"** (manuscript under review).
 
-The study measures the effect of hybridization itself: nine hybrid metaheuristics, covering the four classes of Talbi's taxonomy, are compared with **their own parent algorithms** under identical budgets on the CEC 2017 benchmark suite (D = 10, 30, 50; 51 runs), and the analysis is repeated on a traveling salesman case study (TSPLIB).
+The study measures the effect of hybridization itself: nine hybrid metaheuristics, covering the four classes of Talbi's taxonomy, are compared with **their own parent algorithms** under identical budgets on the CEC 2017 benchmark suite (D = 10, 30, 50; 51 runs), the effect of the budget split between the components is examined at D = 10 and 30, and the analysis is repeated on a traveling salesman case study (TSPLIB).
 
 | Parents | GA, DE, PSO, Nelder–Mead, L-SHADE, CMA-ES (IPOP) |
 |---|---|
@@ -14,10 +14,11 @@ The study measures the effect of hybridization itself: nine hybrid metaheuristic
 ```
 03_Code/src/       algorithms.py (all 15 algorithms), core.py (budget/checkpoints), cec17.py (CEC2017 interface),
                    stats.py (Wilcoxon, Holm, Vargha-Delaney A12, Friedman), tsp.py + tsp/tsp_meta.c (TSP solvers)
-03_Code/scripts/   run_cec2017.py, run_tsp.py (experiments), analyze.py, analyze_tsp.py (tables and figures),
+03_Code/scripts/   run_cec2017.py, run_tsp.py (experiments), analyze.py, analyze_tsp.py, analyze_ablation.py
+                   (tables and figures), fig_graphical_abstract.py,
                    bibliometrics.py, fig_bibliometrics.py (OpenAlex analysis), verify_cec17.py (benchmark check)
 04_Data/           TSPLIB instances, OpenAlex bibliometric counts
-05_Results/raw/    one CSV row per run: final error and the error at 14 budget checkpoints
+05_Results/raw/    cec2017_main.csv, cec2017_ablation_rho.csv, tsp_main.csv; one CSV row per run: final error and the error at 14 budget checkpoints
 ```
 
 ## Requirements and build
@@ -33,6 +34,12 @@ python3 03_Code/scripts/run_cec2017.py --runs 51 --out 05_Results/raw/cec2017_ma
 python3 03_Code/scripts/run_tsp.py --out 05_Results/raw/tsp_main.csv
 python3 03_Code/scripts/analyze.py 05_Results/raw/cec2017_main.csv 05_Results/tables 06_Figures
 python3 03_Code/scripts/analyze_tsp.py 05_Results/raw/tsp_main.csv 05_Results/tables 06_Figures
+# budget-split study: MA-DE, MA-LSHADE, DE>NM and LSHADE>CMAES with rho = 0.05, 0.1, 0.4 (rho = 0.2 is the main run)
+python3 03_Code/scripts/run_cec2017.py --runs 51 --dims 10 30 \
+  --algs MA-DE@0.05 MA-DE@0.1 MA-DE@0.4 MA-LSHADE@0.05 MA-LSHADE@0.1 MA-LSHADE@0.4 \
+         'DE>NM@0.05' 'DE>NM@0.1' 'DE>NM@0.4' 'LSHADE>CMAES@0.05' 'LSHADE>CMAES@0.1' 'LSHADE>CMAES@0.4' \
+  --out 05_Results/raw/cec2017_ablation_rho.csv
+python3 03_Code/scripts/analyze_ablation.py 05_Results/raw/cec2017_main.csv 05_Results/raw/cec2017_ablation_rho.csv 05_Results/tables 06_Figures
 ```
 The experiments are resumable: tasks already present in the output CSV are skipped. All algorithms receive the same random seed for a given function, dimension and run (common random numbers).
 
@@ -40,6 +47,9 @@ The experiments are resumable: tasks already present in the output CSV are skipp
 * CEC 2017 benchmark: official C++ code and data by Awad, Ali, Suganthan, Liang and Qu (fast-pow variant by V. Stanovov), redistributed unchanged from <https://github.com/P-N-Suganthan/CEC2017-BoundContrained>.
 * CMA-ES: pycma by N. Hansen et al.
 * TSPLIB: G. Reinelt (1991).
+
+## Citation
+The archived release of this repository has a DOI on Zenodo; the citation metadata are given in `CITATION.cff` and `.zenodo.json`.
 
 ## License
 MIT (see `LICENSE`); third-party benchmark code and data remain under their original terms (see `NOTICE`).

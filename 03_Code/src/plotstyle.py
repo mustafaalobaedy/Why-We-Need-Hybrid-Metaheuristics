@@ -1,4 +1,6 @@
 """Shared figure style: dark text, recessive grid, validated categorical palette, 300 dpi."""
+import os
+
 import matplotlib
 
 matplotlib.use("Agg")
@@ -20,10 +22,12 @@ def apply():
         "grid.linewidth": 0.6, "axes.axisbelow": True, "axes.spines.top": False,
         "axes.spines.right": False, "legend.frameon": False, "lines.linewidth": 2,
         "savefig.dpi": 300, "savefig.bbox": "tight", "figure.facecolor": "white",
-        "axes.facecolor": "white", "mathtext.fontset": "custom", "mathtext.rm": "Liberation Sans",
+        "axes.facecolor": "white", "pdf.fonttype": 42, "mathtext.fontset": "custom", "mathtext.rm": "Liberation Sans",
     })
 
 
 def save(fig, path):
     fig.savefig(path, facecolor="white")
+    # Vector copy for submission (Elsevier asks for EPS/PDF or >= 1000 dpi for line art).
+    fig.savefig(os.path.splitext(path)[0] + ".pdf", facecolor="white")
     plt.close(fig)

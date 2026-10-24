@@ -1,0 +1,33 @@
+{
+  "upload_type": "software",
+  "title": "Why We Need Hybrid Metaheuristics: code and data",
+  "description": "<p>Code, data and raw results for the study <em>Why We Need Hybrid Metaheuristics: An Empirical Analysis of When Hybridization Pays Off</em>.</p><p>Nine hybrid metaheuristics, covering the four classes of Talbi's taxonomy, are compared with their own parent algorithms (GA, DE, PSO, Nelder–Mead, L-SHADE and IPOP-CMA-ES) under identical budgets on the CEC 2017 benchmark suite (D = 10, 30 and 50; 51 runs), with a budget-split sensitivity study and a traveling salesman case study (ACS, ILS and two hybrids on TSPLIB instances). The archive contains the implementations of all algorithms, the experiment and analysis scripts, the bibliometric data, and one CSV row per run with the final error and the error at 14 budget checkpoints.</p>",
+  "creators": [
+    {
+      "name": "Alobaedy, Mustafa Muwafak",
+      "affiliation": "Centre for Image and Vision Computing, Multimedia University, Cyberjaya, Malaysia",
+      "orcid": "0000-0002-6562-2922"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "hybrid metaheuristics",
+    "memetic algorithms",
+    "hybridization",
+    "differential evolution",
+    "CMA-ES",
+    "benchmarking",
+    "CEC 2017",
+    "traveling salesman problem"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/mustafaalobaedy/Why-We-Need-Hybrid-Metaheuristics",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ]
+}
